@@ -8,6 +8,13 @@ namespace Akka.Configuration.Lambdas
 {
     public static class LambdaConfigurationExtensions
     {
+        public static ActorSystemHost CreateHostFrom(this IEnumerable<KeyValuePair<string, string>> entries, 
+            Action<ActorSystem> installerAction,
+            IActorSystemBlockingStrategy blockingStrategy)
+        {
+            return installerAction.CreateHost(entries, blockingStrategy);
+        }
+
         public static ActorSystemHost CreateHost(this Action<ActorSystem> installAction,
             IEnumerable<KeyValuePair<string, string>> entries, IActorSystemBlockingStrategy blockingStrategy)
         {

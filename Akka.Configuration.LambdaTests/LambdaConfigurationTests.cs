@@ -69,5 +69,30 @@ namespace Akka.Configuration.LambdaTests
             A.CallTo(() => blockingStrategy.AwaitTermination(A<ActorSystem>.Ignored))
                 .MustHaveHappened();
         }
+
+        [Test]
+        public void Should_be_able_to_derive_hosts_from_dictionaries()
+        {
+            var blockingStrategy = A.Fake<IActorSystemBlockingStrategy>();
+            var installer = A.Fake<IActorSystemInstaller>();
+
+            var entries = new Dictionary<string, string>()
+            {
+                {"key1", "value1"},
+                {"key2", "value2"},
+                {"key3", "value3"}
+            };
+
+            Action<ActorSystem> installAction = installer.InstallActors;
+
+            var host = entries.CreateHostFrom(installAction, blockingStrategy);
+            host.Run("FakeSystem");
+
+            A.CallTo(() => installer.InstallActors(A<ActorSystem>.Ignored))
+                .MustHaveHappened();
+
+            A.CallTo(() => blockingStrategy.AwaitTermination(A<ActorSystem>.Ignored))
+                .MustHaveHappened();
+        }
     }
 }
