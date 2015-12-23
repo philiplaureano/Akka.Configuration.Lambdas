@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Akka.Configuration.Lambdas", "Akka.Configuration.Lambdas.csproj", "{A2B94EA4-1C18-456D-9786-89D12D643740}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Akka.Configuration.LambdaTests", "..\Akka.Configuration.LambdaTests\Akka.Configuration.LambdaTests.csproj", "{92F9B584-DAA0-4DFE-B220-3ADF2FB59279}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A2B94EA4-1C18-456D-9786-89D12D643740}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2B94EA4-1C18-456D-9786-89D12D643740}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2B94EA4-1C18-456D-9786-89D12D643740}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2B94EA4-1C18-456D-9786-89D12D643740}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92F9B584-DAA0-4DFE-B220-3ADF2FB59279}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92F9B584-DAA0-4DFE-B220-3ADF2FB59279}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92F9B584-DAA0-4DFE-B220-3ADF2FB59279}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92F9B584-DAA0-4DFE-B220-3ADF2FB59279}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
