@@ -68,7 +68,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LambdaConfigurationTests.cs" />
+    <Compile Include="ActorSystemHostConfigurationTests.cs" />
+    <Compile Include="ActorSystemHostRunnerExtensionTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

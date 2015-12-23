@@ -11,7 +11,7 @@ using NUnit.Framework;
 namespace Akka.Configuration.LambdaTests
 {
     [TestFixture]
-    public class LambdaConfigurationTests
+    public class ActorSystemHostConfigurationTests
     {
         [Test]
         public void Should_be_able_to_adapt_lambda_to_actor_system_installer()

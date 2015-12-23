@@ -60,8 +60,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActorSystemHostRunnerExtensions.cs" />
     <Compile Include="ActorSystemInstallerAdapter.cs" />
-    <Compile Include="LambdaConfigurationExtensions.cs" />
+    <Compile Include="ActorSystemHostConfigurationExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

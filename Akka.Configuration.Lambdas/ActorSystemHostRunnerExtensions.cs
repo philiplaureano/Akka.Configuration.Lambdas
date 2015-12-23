@@ -8,21 +8,21 @@ namespace Akka.Configuration.Lambdas
 {
     public static class ActorSystemHostRunnerExtensions
     {
-        public static Action<string> CreateActionFrom(IEnumerable<KeyValuePair<string, string>> entries,
+        public static Action<string> CreateHostRunnerFrom(IEnumerable<KeyValuePair<string, string>> entries,
             Action<ActorSystem> installAction,
             IActorSystemBlockingStrategy blockingStrategy)
         {
-            return CreateActionFrom(entries, new ActorSystemInstallerAdapter(installAction), blockingStrategy);
+            return CreateHostRunnerFrom(entries, new ActorSystemInstallerAdapter(installAction), blockingStrategy);
         }
 
-        public static Action<string> CreateActionFrom(IEnumerable<KeyValuePair<string, string>> entries, 
+        public static Action<string> CreateHostRunnerFrom(IEnumerable<KeyValuePair<string, string>> entries, 
             IActorSystemInstaller installer, 
             IActorSystemBlockingStrategy blockingStrategy)
         {
-            return CreateActionFrom(new ActorSystemBuilder(entries.ToHoconBuilder()), installer, blockingStrategy);
+            return CreateHostRunnerFrom(new ActorSystemBuilder(entries.ToHoconBuilder()), installer, blockingStrategy);
         }
 
-        public static Action<string> CreateActionFrom(IActorSystemBuilder actorSystemBuilder, 
+        public static Action<string> CreateHostRunnerFrom(IActorSystemBuilder actorSystemBuilder, 
             IActorSystemInstaller installer, IActorSystemBlockingStrategy blockingStrategy)
         {
             var host = new ActorSystemHost(actorSystemBuilder, installer, blockingStrategy);
