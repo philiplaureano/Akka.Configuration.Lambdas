@@ -10,20 +10,20 @@ namespace Akka.Configuration.Lambdas
     {
         public static ActorSystemHost CreateHostFrom(this IEnumerable<KeyValuePair<string, string>> entries, 
             Action<ActorSystem> installerAction,
-            IActorSystemBlockingStrategy blockingStrategy)
+            IActorSystemBlockingStrategy blockingStrategy = null)
         {
             return installerAction.CreateHost(entries, blockingStrategy);
         }
 
         public static ActorSystemHost CreateHost(this Action<ActorSystem> installAction,
-            IEnumerable<KeyValuePair<string, string>> entries, IActorSystemBlockingStrategy blockingStrategy)
+            IEnumerable<KeyValuePair<string, string>> entries, IActorSystemBlockingStrategy blockingStrategy = null)
         {
             return CreateHost(installAction, new ActorSystemBuilder(entries.ToHoconBuilder()), blockingStrategy);
         }
 
         public static ActorSystemHost CreateHost(this Action<ActorSystem> installAction, 
             IActorSystemBuilder actorSystemBuilder, 
-            IActorSystemBlockingStrategy blockingStrategy)
+            IActorSystemBlockingStrategy blockingStrategy = null)
         {
             var host = new ActorSystemHost(actorSystemBuilder, new ActorSystemInstallerAdapter(installAction), blockingStrategy);
             return host;
