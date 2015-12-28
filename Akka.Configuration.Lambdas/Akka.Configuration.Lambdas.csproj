@@ -60,6 +60,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActorSystemHelpers.cs" />
     <Compile Include="ActorSystemHostRunnerExtensions.cs" />
     <Compile Include="ActorSystemInstallerAdapter.cs" />
     <Compile Include="ActorSystemHostConfigurationExtensions.cs" />

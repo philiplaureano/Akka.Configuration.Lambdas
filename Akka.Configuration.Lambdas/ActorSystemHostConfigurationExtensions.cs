@@ -8,7 +8,7 @@ namespace Akka.Configuration.Lambdas
 {
     public static class ActorSystemHostConfigurationExtensions
     {
-        public static ActorSystemHost CreateHostFrom(this IEnumerable<KeyValuePair<string, string>> entries, 
+        public static ActorSystemHost CreateHostFrom(this IEnumerable<KeyValuePair<string, string>> entries,
             Action<ActorSystem> installerAction,
             IActorSystemBlockingStrategy blockingStrategy = null)
         {
@@ -21,8 +21,8 @@ namespace Akka.Configuration.Lambdas
             return CreateHost(installAction, new ActorSystemBuilder(entries.ToHoconBuilder()), blockingStrategy);
         }
 
-        public static ActorSystemHost CreateHost(this Action<ActorSystem> installAction, 
-            IActorSystemBuilder actorSystemBuilder, 
+        public static ActorSystemHost CreateHost(this Action<ActorSystem> installAction,
+            IActorSystemBuilder actorSystemBuilder,
             IActorSystemBlockingStrategy blockingStrategy = null)
         {
             var host = new ActorSystemHost(actorSystemBuilder, new ActorSystemInstallerAdapter(installAction), blockingStrategy);
